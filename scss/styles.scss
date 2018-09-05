@@ -51,12 +51,22 @@ body {
 .content-wrapper {
   width: 90%;
   margin: 0 auto;
-  padding: 20px;
   text-align: center;
 }
 
+.intro {
+  min-height: 100vh;
+}
+
 .intro, .details, .end-note {
-  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+
+  > * {
+    flex: 1 100%;
+  }
 }
 
 .wedlock, .rel-status, h3 {
@@ -77,11 +87,13 @@ h5 {
 .wedlock {
   font-size: $wedlockFontSize;
   line-height: 1;
+  align-self: flex-end;
 }
 
 .rel-status {
   font-size: $relStatusFontSize;
   line-height: 1;
+  margin: 10px 0;
   
   .status {
     font-size: $statusFontSize;
@@ -96,11 +108,25 @@ h5 {
   font-size: $h5FontSize;
 }
 
+.details {
+  .heading {
+    line-height: 1;
+
+    h5 {
+      margin: 20px 0;
+    }
+  }
+
+  .event, .event-date {
+    margin: 20px 0;
+  }
+}
+
 .date {
   font-family: 'Archer Light';
   font-size: $dateFontSize;
   color: $secondaryTextColor;
-  border-right: 1px solid $dateDividerColor;
+  border-right: 1px dotted $dateDividerColor;
   padding-right: 15px;
 }
 
@@ -140,6 +166,7 @@ h5 {
 }
 
 .place {
+  margin: 20px 0 10px;
   font-size: $placeFontSize;
 }
 
@@ -147,4 +174,20 @@ h5 {
   font-family: 'Archer Book Italic';
   font-size: $addressFontSize;
   color: $primaryTextColor;
+}
+
+@media all and (min-width: 991px) {
+  .wedlock > * {
+    display: inline-block;
+    margin: 20px 0;
+  }
+
+  .details .event {
+    flex: 1 auto;
+    padding: 20px 0;
+
+    + .event {
+      border-left: 1px dotted $dividerColor;
+    }
+  }
 }
