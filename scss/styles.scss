@@ -1,0 +1,63 @@
+$eviteCardBgColor: #fff0c2;
+$primaryTextColor: #7a5246;
+$secondaryTextColor: #f26d75;
+$dividerColor: #bdb192;
+$dateDividerColor: #7b7361;
+
+$fontFilesPath: '../fonts/';
+$fonts: (
+    'Mathanifo Script': 'Mathanifo_Script.ttf',
+    'Archer Semibold': 'Archer_Semibold.otf',
+    'Archer Bold': 'Archer_Bold.otf',
+    'Archer Book': 'Archer_Book.otf',
+    'Archer Book Italic': 'Archer_Book_Italic.otf',
+    'Archer Light': 'Archer_Light.otf'
+);
+
+@each $fontFamily, $fontFile in $fonts {
+    @font-face {
+        font-family: $fontFamily;
+        src: url(#{$fontFilesPath + $fontFile});
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: $eviteCardBgColor;
+}
+
+.content-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-family: 'Mathanifo Script';
+    color: $primaryTextColor;
+}
+
+h4, p {
+    font-family: 'Archer Semibold';
+    color: $secondaryTextColor;
+}
+
+.date {
+    font-family: 'Archer Light';
+    color: $secondaryTextColor;
+}
+
+.month, .year, .address p {
+    font-family: 'Archer Book Italic';
+    color: $primaryTextColor;
+}
