@@ -165,14 +165,24 @@ h5 {
   }
 }
 
-.place {
-  margin: 20px 0 10px;
-  font-size: $placeFontSize;
+.event-place {
+  margin-top: 30px;
+
+  .place {
+    margin: 10px 0;
+    font-size: $placeFontSize;
+  }
+  
+  .address p {
+    font-family: 'Archer Book Italic';
+    font-size: $addressFontSize;
+    color: $primaryTextColor;
+  }
 }
 
-.address p {
-  font-family: 'Archer Book Italic';
-  font-size: $addressFontSize;
+.end-note .designer-info > p {
+  margin: 10px 0;
+  font-family: "Archer Light";
   color: $primaryTextColor;
 }
 
