@@ -56,17 +56,17 @@ body {
 }
 
 .wedlock, .rel-status, h3 {
-  font-family: 'Mathanifo Script';
+  font-family: "Mathanifo Script";
   color: #7a5246;
 }
 
 h4, p {
-  font-family: 'Archer Semibold';
+  font-family: "Archer Semibold";
   color: #f26d75;
 }
 
 h5 {
-  font-family: 'Archer Light';
+  font-family: "Archer Light";
   color: #f26d75;
 }
 
@@ -104,7 +104,7 @@ h5 {
 }
 
 .date {
-  font-family: 'Archer Light';
+  font-family: "Archer Light";
   font-size: 80px;
   color: #f26d75;
   border-right: 1px dotted #7b7361;
@@ -120,7 +120,7 @@ h5 {
   padding-left: 15px;
 }
 .month-year .month, .month-year .year {
-  font-family: 'Archer Book Italic';
+  font-family: "Archer Book Italic";
   color: #7a5246;
 }
 .month-year .month {
@@ -134,21 +134,29 @@ h5 {
   font-size: 19px;
 }
 .timing .meridiem, .timing .to {
-  font-family: 'Archer Book Italic';
+  font-family: "Archer Book Italic";
   font-size: 18px;
 }
 .timing .to {
   color: #7a5246;
 }
 
-.place {
-  margin: 20px 0 10px;
+.event-place {
+  margin-top: 30px;
+}
+.event-place .place {
+  margin: 10px 0;
   font-size: 20px;
 }
-
-.address p {
-  font-family: 'Archer Book Italic';
+.event-place .address p {
+  font-family: "Archer Book Italic";
   font-size: 18px;
+  color: #7a5246;
+}
+
+.end-note .designer-info > p {
+  margin: 10px 0;
+  font-family: "Archer Light";
   color: #7a5246;
 }
 
