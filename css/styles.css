@@ -51,17 +51,17 @@ body {
 }
 
 .wedlock, .rel-status, h3 {
-  font-family: 'Mathanifo Script';
+  font-family: "Mathanifo Script";
   color: #7a5246;
 }
 
 h4, p {
-  font-family: 'Archer Semibold';
+  font-family: "Archer Semibold";
   color: #f26d75;
 }
 
 h5 {
-  font-family: 'Archer Light';
+  font-family: "Archer Light";
   color: #f26d75;
 }
 
@@ -73,6 +73,37 @@ h5 {
   font-size: 19px;
 }
 
+@keyframes love-in-air {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10px) scale(1.25);
+    opacity: 0;
+  }
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes slide-in-from-left {
+  from {
+    transform: translateX(-75px);
+    opacity: 0;
+  }
+}
+@keyframes slide-in-from-right {
+  from {
+    transform: translateX(75px);
+    opacity: 0;
+  }
+}
+
 .intro {
   min-height: 100vh;
 }
@@ -80,7 +111,29 @@ h5 {
   font-size: 80px;
   line-height: 1;
   align-self: flex-end;
-  margin-bottom: 50px;
+  position: relative;
+}
+.intro .wedlock > .img-little-hearts {
+  position: absolute;
+  animation: blink 1s linear infinite;
+}
+.intro .wedlock > .img-little-hearts.lh-l-1 {
+  left: 10%;
+  top: 55%;
+}
+.intro .wedlock > .img-little-hearts.lh-l-2 {
+  left: 20%;
+  top: 63%;
+  animation-delay: .25s;
+}
+.intro .wedlock > .img-little-hearts.lh-r-1 {
+  right: 20%;
+  top: -10px;
+  animation-delay: .15s;
+}
+.intro .wedlock > .img-little-hearts.lh-r-2 {
+  right: 10%;
+  animation-delay: .35s;
 }
 .intro .rel-status {
   font-size: 50px;
@@ -101,14 +154,19 @@ h5 {
 }
 .intro .img-wedlock-container .img-wedlock-heart {
   top: 0;
+  opacity: 0;
+  animation: love-in-air 2s 2.25s infinite;
+  transform-origin: center;
 }
 .intro .img-wedlock-container .img-wedlock-bridegroom {
   left: 0;
   bottom: 10px;
+  animation: slide-in-from-left 2s forwards;
 }
 .intro .img-wedlock-container .img-wedlock-bride {
   right: 0;
   bottom: 7px;
+  animation: slide-in-from-right 2s forwards;
 }
 .intro .img-wedlock-container .img-wedlock-bg {
   bottom: 0;
@@ -239,9 +297,29 @@ h5 {
 }
 
 @media all and (min-width: 991px) {
-  .wedlock > * {
+  .intro .wedlock {
+    margin-bottom: 50px;
+  }
+  .intro .wedlock > * {
     display: inline-block;
     margin: 20px 0;
+  }
+  .intro .wedlock > .img-little-hearts.lh-l-1, .intro .wedlock > .img-little-hearts.lh-l-2, .intro .wedlock > .img-little-hearts.lh-r-1, .intro .wedlock > .img-little-hearts.lh-r-2 {
+    left: unset;
+    top: unset;
+    right: unset;
+  }
+  .intro .wedlock > .img-little-hearts.lh-l-1 {
+    left: 25%;
+    top: -10px;
+  }
+  .intro .wedlock > .img-little-hearts.lh-r-1 {
+    right: 28%;
+    top: -10px;
+  }
+  .intro .wedlock > .img-little-hearts.lh-r-2 {
+    right: 26%;
+    top: 10px;
   }
 
   .details .event {
