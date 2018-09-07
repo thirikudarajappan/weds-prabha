@@ -40,49 +40,29 @@ body {
   margin: 0 auto;
   text-align: center;
 }
-
-.intro {
-  min-height: 100vh;
-}
-
-.intro, .details, .end-note {
+.content-wrapper .intro, .content-wrapper .details, .content-wrapper .end-note {
   padding: 20px;
   box-sizing: border-box;
   display: flex;
   flex-flow: row wrap;
 }
-.intro > *, .details > *, .end-note > * {
+.content-wrapper .intro > *, .content-wrapper .details > *, .content-wrapper .end-note > * {
   flex: 1 100%;
 }
 
 .wedlock, .rel-status, h3 {
-  font-family: "Mathanifo Script";
+  font-family: 'Mathanifo Script';
   color: #7a5246;
 }
 
 h4, p {
-  font-family: "Archer Semibold";
+  font-family: 'Archer Semibold';
   color: #f26d75;
 }
 
 h5 {
-  font-family: "Archer Light";
+  font-family: 'Archer Light';
   color: #f26d75;
-}
-
-.wedlock {
-  font-size: 80px;
-  line-height: 1;
-  align-self: flex-end;
-}
-
-.rel-status {
-  font-size: 50px;
-  line-height: 1;
-  margin: 10px 0;
-}
-.rel-status .status {
-  font-size: 80px;
 }
 
 h3 {
@@ -91,6 +71,48 @@ h3 {
 
 h5 {
   font-size: 19px;
+}
+
+.intro {
+  min-height: 100vh;
+}
+.intro .wedlock {
+  font-size: 80px;
+  line-height: 1;
+  align-self: flex-end;
+  margin-bottom: 50px;
+}
+.intro .rel-status {
+  font-size: 50px;
+  line-height: 1;
+  margin: 30px 0;
+}
+.intro .rel-status .status {
+  font-size: 80px;
+}
+.intro .img-wedlock-container {
+  position: relative;
+  display: inline-block;
+  min-height: 200px;
+  min-width: 155px;
+}
+.intro .img-wedlock-container .img-wedlock-heart, .intro .img-wedlock-container .img-wedlock-bridegroom, .intro .img-wedlock-container .img-wedlock-bride, .intro .img-wedlock-container .img-wedlock-bg {
+  position: absolute;
+}
+.intro .img-wedlock-container .img-wedlock-heart {
+  top: 0;
+}
+.intro .img-wedlock-container .img-wedlock-bridegroom {
+  left: 0;
+  bottom: 10px;
+}
+.intro .img-wedlock-container .img-wedlock-bride {
+  right: 0;
+  bottom: 7px;
+}
+.intro .img-wedlock-container .img-wedlock-bg {
+  bottom: 0;
+  left: 5px;
 }
 
 .details .heading {
@@ -102,56 +124,76 @@ h5 {
 .details .event, .details .event-date {
   margin: 20px 0;
 }
-
-.date {
-  font-family: "Archer Light";
+.details .event .event-date .date {
+  font-family: 'Archer Light';
   font-size: 80px;
   color: #f26d75;
   border-right: 1px dotted #7b7361;
   padding-right: 15px;
 }
-
-.date, .month-year {
+.details .event .event-date .date, .details .event .event-date .month-year {
   display: inline-block;
 }
-
-.month-year {
+.details .event .event-date .month-year {
   text-align: left;
   padding-left: 15px;
 }
-.month-year .month, .month-year .year {
-  font-family: "Archer Book Italic";
+.details .event .event-date .month-year .month, .details .event .event-date .month-year .year {
+  font-family: 'Archer Book Italic';
   color: #7a5246;
 }
-.month-year .month {
+.details .event .event-date .month-year .month {
   font-size: 22px;
 }
-.month-year .year {
+.details .event .event-date .month-year .year {
   font-size: 37px;
 }
-
-.timing {
+.details .event .timing {
   font-size: 19px;
 }
-.timing .meridiem, .timing .to {
-  font-family: "Archer Book Italic";
+.details .event .timing .meridiem, .details .event .timing .to {
+  font-family: 'Archer Book Italic';
   font-size: 18px;
 }
-.timing .to {
+.details .event .timing .to {
   color: #7a5246;
 }
-
-.event-place {
+.details .event .event-place {
   margin-top: 30px;
 }
-.event-place .place {
+.details .event .event-place .place {
   margin: 10px 0;
   font-size: 20px;
 }
-.event-place .address p {
-  font-family: "Archer Book Italic";
+.details .event .event-place .address p {
+  font-family: 'Archer Book Italic';
   font-size: 18px;
   color: #7a5246;
+}
+.details .img-garland-container, .details .img-rings-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+}
+.details .img-garland-container .img-garland-heart-l, .details .img-garland-container .img-garland-heart-r {
+  position: absolute;
+  top: -18px;
+}
+.details .img-garland-container .img-garland-heart-l {
+  left: -1px;
+}
+.details .img-garland-container .img-garland-heart-r {
+  right: -4px;
+}
+.details .img-rings-container .img-ring-bride, .details .img-rings-container .img-ring-bridegroom {
+  position: absolute;
+  bottom: 10px;
+}
+.details .img-rings-container .img-ring-bride {
+  left: 33px;
+}
+.details .img-rings-container .img-ring-bridegroom {
+  right: 33px;
 }
 
 .end-note .designer-info > p {

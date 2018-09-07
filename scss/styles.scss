@@ -52,20 +52,16 @@ body {
   width: 90%;
   margin: 0 auto;
   text-align: center;
-}
 
-.intro {
-  min-height: 100vh;
-}
-
-.intro, .details, .end-note {
-  padding: 20px;
-  box-sizing: border-box;
-  display: flex;
-  flex-flow: row wrap;
-
-  > * {
-    flex: 1 100%;
+  .intro, .details, .end-note {
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row wrap;
+  
+    > * {
+      flex: 1 100%;
+    }
   }
 }
 
@@ -84,22 +80,6 @@ h5 {
   color: $secondaryTextColor;
 }
 
-.wedlock {
-  font-size: $wedlockFontSize;
-  line-height: 1;
-  align-self: flex-end;
-}
-
-.rel-status {
-  font-size: $relStatusFontSize;
-  line-height: 1;
-  margin: 10px 0;
-  
-  .status {
-    font-size: $statusFontSize;
-  }
-}
-
 h3 {
   font-size: $h3FontSize;
 }
@@ -108,6 +88,59 @@ h5 {
   font-size: $h5FontSize;
 }
 
+// Intro
+.intro {
+  min-height: 100vh;
+
+  .wedlock {
+    font-size: $wedlockFontSize;
+    line-height: 1;
+    align-self: flex-end;
+    margin-bottom: 50px;
+  }
+  
+  .rel-status {
+    font-size: $relStatusFontSize;
+    line-height: 1;
+    margin: 30px 0;
+    
+    .status {
+      font-size: $statusFontSize;
+    }
+  }
+
+  .img-wedlock-container {
+    position: relative;
+    display: inline-block;
+    min-height: 200px;
+    min-width: 155px;
+
+    .img-wedlock-heart, .img-wedlock-bridegroom, .img-wedlock-bride, .img-wedlock-bg {
+      position: absolute;
+    }
+
+    .img-wedlock-heart {
+      top: 0;
+    }
+
+    .img-wedlock-bridegroom {
+      left: 0;
+      bottom: 10px;
+    }
+
+    .img-wedlock-bride {
+      right: 0;
+      bottom: 7px;
+    }
+
+    .img-wedlock-bg {
+      bottom: 0;
+      left: 5px;
+    }
+  }
+}
+
+// Details
 .details {
   .heading {
     line-height: 1;
@@ -120,66 +153,105 @@ h5 {
   .event, .event-date {
     margin: 20px 0;
   }
-}
 
-.date {
-  font-family: 'Archer Light';
-  font-size: $dateFontSize;
-  color: $secondaryTextColor;
-  border-right: 1px dotted $dateDividerColor;
-  padding-right: 15px;
-}
-
-.date, .month-year {
-  display: inline-block;
-}
-
-.month-year {
-  text-align: left;
-  padding-left: 15px;
-
-  .month, .year {
-    font-family: 'Archer Book Italic';
-    color: $primaryTextColor;
+  .event .event-date {
+    .date {
+      font-family: 'Archer Light';
+      font-size: $dateFontSize;
+      color: $secondaryTextColor;
+      border-right: 1px dotted $dateDividerColor;
+      padding-right: 15px;
+    }
+    
+    .date, .month-year {
+      display: inline-block;
+    }
+    
+    .month-year {
+      text-align: left;
+      padding-left: 15px;
+    
+      .month, .year {
+        font-family: 'Archer Book Italic';
+        color: $primaryTextColor;
+      }
+      
+      .month {
+        font-size: $monthFontSize;
+      }
+      
+      .year {
+        font-size: $yearFontSize;
+      }
+    }
   }
   
-  .month {
-    font-size: $monthFontSize;
+  .event .timing {
+    font-size: $timingFontSize;
+
+    .meridiem, .to {
+      font-family: 'Archer Book Italic';
+      font-size: $timingMeridiemFontSize;
+    }
+    
+    .to {
+      color: $primaryTextColor;
+    }
   }
-  
-  .year {
-    font-size: $yearFontSize;
+
+  .event .event-place {
+    margin-top: 30px;
+
+    .place {
+      margin: 10px 0;
+      font-size: $placeFontSize;
+    }
+    
+    .address p {
+      font-family: 'Archer Book Italic';
+      font-size: $addressFontSize;
+      color: $primaryTextColor;
+    }
+  }
+
+  .img-garland-container, .img-rings-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+  }
+
+  .img-garland-container {
+    .img-garland-heart-l, .img-garland-heart-r {
+      position: absolute;
+      top: -18px;
+    }
+
+    .img-garland-heart-l {
+      left: -1px;
+    }
+
+    .img-garland-heart-r {
+      right: -4px;
+    }
+  }
+
+  .img-rings-container {
+    .img-ring-bride, .img-ring-bridegroom {
+      position: absolute;
+      bottom: 10px;
+    }
+
+    .img-ring-bride {
+      left: 33px;
+    }
+
+    .img-ring-bridegroom {
+      right: 33px;
+    }
   }
 }
 
-.timing {
-  font-size: $timingFontSize;
-
-  .meridiem, .to {
-    font-family: 'Archer Book Italic';
-    font-size: $timingMeridiemFontSize;
-  }
-  
-  .to {
-    color: $primaryTextColor;
-  }
-}
-
-.event-place {
-  margin-top: 30px;
-
-  .place {
-    margin: 10px 0;
-    font-size: $placeFontSize;
-  }
-  
-  .address p {
-    font-family: 'Archer Book Italic';
-    font-size: $addressFontSize;
-    color: $primaryTextColor;
-  }
-}
-
+// End note
 .end-note .designer-info > p {
   margin: 10px 0;
   font-family: "Archer Light";
