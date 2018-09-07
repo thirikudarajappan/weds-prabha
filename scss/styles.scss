@@ -89,6 +89,47 @@ h5 {
 }
 
 // Intro
+
+// Wedlock heart animation
+@keyframes love-in-air {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  80% {
+    opacity: 1;
+  }
+  
+  100% {
+    transform: translateY(-10px) scale(1.25);
+    opacity: 0;
+  }
+}
+
+// Blink animation
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+// Slide in animation
+@keyframes slide-in-from-left {
+  from {
+    transform: translateX(-75px);
+    opacity: 0;
+  }
+}
+
+// Slide in animation
+@keyframes slide-in-from-right {
+  from {
+    transform: translateX(75px);
+    opacity: 0;
+  }
+}
+
 .intro {
   min-height: 100vh;
 
@@ -96,7 +137,34 @@ h5 {
     font-size: $wedlockFontSize;
     line-height: 1;
     align-self: flex-end;
-    margin-bottom: 50px;
+    position: relative;
+    
+    > .img-little-hearts {
+      position: absolute;
+      animation: blink 1s linear infinite;
+
+      &.lh-l-1 {
+        left: 10%;
+        top: 55%;
+      }
+
+      &.lh-l-2 {
+        left: 20%;
+        top: 63%;
+        animation-delay: .25s;
+      }
+
+      &.lh-r-1 {
+        right: 20%;
+        top: -10px;
+        animation-delay: .15s;
+      }
+
+      &.lh-r-2 {
+        right: 10%;
+        animation-delay: .35s;
+      }
+    }
   }
   
   .rel-status {
@@ -121,16 +189,20 @@ h5 {
 
     .img-wedlock-heart {
       top: 0;
+      animation: love-in-air 2s 2.5s infinite;
+      transform-origin: center;
     }
 
     .img-wedlock-bridegroom {
       left: 0;
       bottom: 10px;
+      animation: slide-in-from-left 2s forwards;
     }
 
     .img-wedlock-bride {
       right: 0;
       bottom: 7px;
+      animation: slide-in-from-right 2s forwards;
     }
 
     .img-wedlock-bg {
@@ -300,9 +372,36 @@ h5 {
 }
 
 @media all and (min-width: 991px) {
-  .wedlock > * {
-    display: inline-block;
-    margin: 20px 0;
+  .intro .wedlock {
+    margin-bottom: 50px;
+
+    > * {
+      display: inline-block;
+      margin: 20px 0;
+    }
+    
+    > .img-little-hearts {
+      &.lh-l-1, &.lh-l-2, &.lh-r-1, &.lh-r-2 {
+        left: unset;
+        top: unset;
+        right: unset;
+      }
+
+      &.lh-l-1 {
+        left: 25%;
+        top: -10px;
+      }
+
+      &.lh-r-1 {
+        right: 28%;
+        top: -10px;
+      }
+
+      &.lh-r-2 {
+        right: 26%;
+        top: 10px;
+      }
+    }
   }
 
   .details .event {
