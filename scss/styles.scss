@@ -141,6 +141,32 @@ h5 {
 }
 
 // Details
+
+// Join rings animation
+@keyframes join-rings-l {
+	from { transform: translateX(-5px); }
+}
+
+@keyframes join-rings-r {
+	from { transform: translateX(5px); }
+}
+
+// Heart wings animation
+@keyframes fly-heart {
+  0%, 100% {
+    transform: translateY(-10px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+}
+
+// Heart beat animation
+@keyframes beat {
+	to { transform: scale(1.4); }
+}
+
 .details {
   .heading {
     line-height: 1;
@@ -224,6 +250,8 @@ h5 {
     .img-garland-heart-l, .img-garland-heart-r {
       position: absolute;
       top: -18px;
+      animation: beat .25s infinite alternate;
+      transform-origin: center;
     }
 
     .img-garland-heart-l {
@@ -235,18 +263,31 @@ h5 {
     }
   }
 
+  .img-heart-wings {
+    animation: fly-heart 1s infinite alternate;
+    transform-origin: center;
+  }
+
+  .img-two-hearts {
+    animation: beat .25s infinite alternate;
+    transform-origin: center;
+  }
+
   .img-rings-container {
     .img-ring-bride, .img-ring-bridegroom {
       position: absolute;
       bottom: 10px;
+      transform-origin: center;
     }
 
     .img-ring-bride {
       left: 33px;
+      animation: join-rings-l .5s infinite alternate;
     }
 
     .img-ring-bridegroom {
       right: 33px;
+      animation: join-rings-r .5s infinite alternate;
     }
   }
 }
